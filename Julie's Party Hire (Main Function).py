@@ -34,12 +34,12 @@ def setup_buttons():
 
 def main():
     global party_list, customer_entry, receipt_entry, item_entry, itemnum_entry, row_entry, total_entries, frame, main_window
-    party_list = []
+    party_list = []                 # Stores the information that the user inputs
     total_entries = 0
-    main_window = Tk()
-    frame = Frame(main_window)
-    setup_buttons()
-    main_window.geometry("500x700")
+    main_window = Tk()              # Creates a window
+    frame = Frame(main_window)      # Used to print the users information
+    setup_buttons()                 # To call out the function which contains the Labels, Entry boxes and Buttons
+    main_window.geometry("500x700") # Susceptible to change later on but it essentially determines the size of window
     main_window.mainloop()
 
 main()
