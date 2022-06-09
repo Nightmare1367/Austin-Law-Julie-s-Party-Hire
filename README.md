@@ -1,9 +1,7 @@
-Austin Law
-Julie's Party Hire Program
+Julie's Party Hire (Delete Row)
 
-This program is designed for Julie who runs a party hire store.
-The program allows the user to insert their name, receipt number, 
-item the hired and the amount they hired, the program also allows 
-the user to append their details and print it onto the window which
-allows the user to view their order. After reviewing the order
-they are able to delete their order.
+This version will allow the user to delete the row that the user inputted 
+into the row entry box. There are also conditions in place which will stop 
+the program from giving an error, this condition checks if the entry box
+has any input or if the range for the row number is larger than the amount 
+of rows present, then the text for the delete row button will turn red.
