@@ -5,6 +5,7 @@ Written By: Austin Law
 from tkinter import *                       # Import the modules
 
 def appending_details():
+    # Appends the users detail into the list created in the 'main' function
     global party_list, customer_entry, receipt_entry, item_entry, itemnum_entry, row_entry, total_entries, frame, main_window
     party_list.append([customer_entry.get(), receipt_entry.get(), item_entry.get(), itemnum_entry.get()])
     customer_entry.delete(0,"end")
@@ -14,6 +15,7 @@ def appending_details():
     total_entries += 1
 
 def quit_button():
+    # Quits out of the window
     main_window.destroy()
 
 def setup_buttons():
@@ -45,6 +47,7 @@ def setup_buttons():
     Button(main_window, text = "Delete Row").grid(column = 2, row = 6, padx = 5, sticky = W+E)
 
 def main():
+    # This function essentially sets up Tkinter, creates a new window and stores information in the list.
     global party_list, customer_entry, receipt_entry, item_entry, itemnum_entry, row_entry, total_entries, frame, main_window
     party_list = []
     total_entries = 0
@@ -53,5 +56,5 @@ def main():
     setup_buttons()
     main_window.geometry("500x700")
     main_window.mainloop()
-
+    
 main()
