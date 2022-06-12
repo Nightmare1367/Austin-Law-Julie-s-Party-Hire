@@ -6,7 +6,8 @@ from tkinter import *                       # Import the modules
 from tkinter import ttk
 
 def checking_validity():
-    global party_listt, customer_entry, receipt_entry, item_entry, itemnum_entry, total_entries
+    global party_listt, customer_entry, receipt_entry, item_entry, itemnum_entry, total_entries, valid_count
+    valid_count = 0
     Label(main_window, text = "                      ").grid(column = 2, row =2, sticky = W+E)
     Label(main_window, text = "                      ").grid(column = 2, row =3, sticky = W+E)
     Label(main_window, text = "                      ").grid(column = 2, row =4, sticky = W+E)
@@ -14,19 +15,32 @@ def checking_validity():
 
     # Checks if the customer entry box is empty 
     if customer_entry.get().strip() == "":
+        valid_count = 1
         Label(main_window, text = "Required", fg = "red").grid(column = 2, row = 2)
 
-    # Checks if the customer entry box is empty 
+    # Checks if the receipt entry box is empty 
     if receipt_entry.get().strip() == "":
+        valid_count = 1
         Label(main_window, text = "Required", fg = "red").grid(column = 2, row = 3)
 
-    # Checks if the customer entry box is empty 
+    # Checks if the item hired entry box is empty 
     if item_entry.get().strip() == "":
+        valid_count = 1
         Label(main_window, text = "Required", fg = "red").grid(column = 2, row = 4)
 
-    # Checks if the customer entry box is empty 
+    # Checks if the customer entry box has numbers
     if customer_entry.get().isdigit():
-        Label(main_window, text = "Can't have number").grid(column = 2, row = 2)
+        valid_count = 1
+        Label(main_window, text = "Can't have number", fg = "red").grid(column = 2, row = 2)
+
+    # Checks if the receipt entry has letters
+    if receipt_entry.get().isalpha():
+        valid_count = 1
+        Label(main_window, text = "Can't have letters", fg = "red").grid(column = 2, row = 3)
+
+    # This function is acts like an else function, if valid_count = 0 then the program will append their details
+    if valid_count == 0:
+        appending_details()
     
         
 def delete_row():
@@ -119,16 +133,3 @@ def main():
     main_window.mainloop()
 
 main()
-
-'''
-item_entry = StringVar()
-    ComboBox = Combobox(main_window, textvariable = item_entry, state = "readonly", value = ("Plates", "Chairs", "Foldable Tables", "Silverware", "Glassware", "Balloons", "Table Cloths")).grid(column = 1, row = 4, sticky = W+E)
-itemnum_entry = StringVar()
-spinbox = Spinbox(main_window, from_=1, to=500, textvariable=itemnum_entry, wrap=False, state="readonly").grid(column = 1, row = 5, sticky = W+E)
-
-item_entry = Entry(main_window)                             # Entry for the item they hired
-item_entry.grid(column = 1, row = 4, sticky = W+E)
-itemnum_entry = Entry(main_window)                          # Entry for the amount of that item they hired
-itemnum_entry.grid(column = 1, row = 5, sticky = W+E)
-
-'''
