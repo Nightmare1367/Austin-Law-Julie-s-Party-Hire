@@ -1,4 +1,4 @@
-Julie's Party Hire (CHecking Validity)
+Julie's Party Hire (Checking Validity)
 
 This version checks if there are any empty entry boxes
 or if there are numbers or letters in the wrong entry 
