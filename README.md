@@ -1,9 +1,10 @@
-Austin Law
-Julie's Party Hire Program
+Julie's Party Hire (CHecking Validity)
 
-This program is designed for Julie who runs a party hire store.
-The program allows the user to insert their name, receipt number, 
-item the hired and the amount they hired, the program also allows 
-the user to append their details and print it onto the window which
-allows the user to view their order. After reviewing the order
-they are able to delete their order.
+This version checks if there are any empty entry boxes
+or if there are numbers or letters in the wrong entry 
+box. If the code detects empty entry boxes, the program 
+will show a message saying "Required" next to the empty
+entry box. If the code detects numbers or letters in the
+wrong entry box, then the program will show a message saying
+"Can't have letters" or "Can't have numbers" next to the 
+entry box which detected the error.
