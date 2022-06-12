@@ -1,5 +1,5 @@
 """
-Date Created: 10 / 06 / 2022 (10th June)
+Date Created: 12 / 06 / 2022 (12th June)
 Written By: Austin Law
 """
 from tkinter import *                       # Import the modules
@@ -31,7 +31,7 @@ def checking_validity():
     # Checks if the customer entry box has numbers
     if customer_entry.get().isdigit():
         valid_count = 1
-        Label(main_window, text = "Can't have number", fg = "red").grid(column = 2, row = 2)
+        Label(main_window, text = "Can't have numbers", fg = "red").grid(column = 2, row = 2)
 
     # Checks if the receipt entry has letters
     if receipt_entry.get().isalpha():
